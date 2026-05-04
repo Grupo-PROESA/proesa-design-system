@@ -1,0 +1,55 @@
+{
+  "name": "@proesa/design",
+  "version": "0.1.0",
+  "description": "Sistema de diseño del ecosistema PROESA. Tokens, componentes React y patrones para mini-apps que viven detrás del Portal.",
+  "type": "module",
+  "private": true,
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/r-tapia22/proesa-design-system.git"
+  },
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "src",
+    "tokens",
+    "docs",
+    "BOOTSTRAP.md",
+    "MIGRATION.md",
+    "CHANGELOG.md",
+    "README.md"
+  ],
+  "exports": {
+    ".": "./src/index.ts",
+    "./tokens": "./tokens/proesa.css",
+    "./preset": "./src/preset.css",
+    "./components": "./src/components/index.ts",
+    "./components/layout": "./src/components/layout/index.ts",
+    "./components/ui": "./src/components/ui/index.ts",
+    "./components/data": "./src/components/data/index.ts",
+    "./components/notifications": "./src/components/notifications/index.ts",
+    "./components/domain": "./src/components/domain/index.ts",
+    "./auth": "./src/components/auth/index.ts",
+    "./hooks": "./src/hooks/index.ts",
+    "./utils": "./src/utils/index.ts",
+    "./icons": "./src/icons/index.ts",
+    "./pages": "./src/pages/index.ts"
+  },
+  "peerDependencies": {
+    "react": ">=18 <20",
+    "react-dom": ">=18 <20",
+    "react-router-dom": ">=6 <8",
+    "lucide-react": ">=0.4"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "lucide-react": "^0.468.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0",
+    "typescript": "^5.7.2"
+  }
+}

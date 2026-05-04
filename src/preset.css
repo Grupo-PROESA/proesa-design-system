@@ -1,0 +1,58 @@
+/*
+ * Tailwind v4 preset del ecosistema PROESA.
+ *
+ * Importar desde el `index.css` de la app, después de Tailwind y los tokens:
+ *
+ *   @import "tailwindcss";
+ *   @import "@proesa/design/tokens";
+ *   @import "@proesa/design/preset";
+ *
+ * El preset:
+ *   1. Declara el font-family institucional como sans default.
+ *   2. Expone los tokens PROESA como utilidades Tailwind (`bg-proesa-navy-700`,
+ *      `text-proesa-teal-600`, etc.) para apps que prefieren clases sobre `var()`.
+ *   3. Aplica `font-family` y `background` base al body.
+ *
+ * Si la app NO usa Tailwind, NO importes este archivo — los tokens crudos
+ * (`tokens/proesa.css`) bastan.
+ */
+
+@theme {
+  /* Color tokens — exposición Tailwind */
+  --color-proesa-navy-900: #14275A;
+  --color-proesa-navy-800: #1B3373;
+  --color-proesa-navy-700: #204590;
+  --color-proesa-navy-500: #4B86C7;
+  --color-proesa-navy-300: #8CC4EA;
+  --color-proesa-navy-200: #BFDBF1;
+  --color-proesa-navy-100: #E3EEF8;
+  --color-proesa-navy-50:  #F2F7FC;
+
+  --color-proesa-teal-900: #1F6056;
+  --color-proesa-teal-700: #2C8A7A;
+  --color-proesa-teal-600: #37A992;
+  --color-proesa-teal-500: #41B292;
+  --color-proesa-teal-300: #7BC4B0;
+  --color-proesa-teal-100: #E2F2EC;
+
+  --color-proesa-mist: #F4F6FA;
+  --color-proesa-fog:  #E7EAF1;
+  --color-proesa-ink:  #0F1626;
+
+  /* Typography */
+  --font-sans: "Source Sans 3", "Calibri", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+@layer base {
+  html, body, #root {
+    height: 100%;
+  }
+
+  body {
+    font-family: var(--proesa-font-sans, var(--font-sans));
+    background: var(--proesa-mist);
+    color: var(--proesa-ink);
+    font-feature-settings: "tnum" 1; /* tabular figures por default */
+  }
+}

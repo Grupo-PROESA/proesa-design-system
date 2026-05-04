@@ -1,0 +1,297 @@
+/* ============================================================
+   Grupo PROESA — Colors & Type
+   Holding corporativa especializada en diagnóstico clínico
+   ============================================================ */
+
+/* Webfonts (Google Fonts substitutes — see README for full notes)
+   - Source Sans 3 substitutes Calibri (the corporate body font)
+   - Cormorant Garamond substitutes the Vianto serif wordmark
+   - JetBrains Mono is used only inside the design system / dev contexts
+*/
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  /* ----------------------------------------------------------
+     COLORS — pulled directly from theme1.xml + slide accents
+     ---------------------------------------------------------- */
+
+  /* Primary navy — the PROESA wordmark color, dominant on titles */
+  --proesa-navy-900: #14275A;   /* darkest, deck title color */
+  --proesa-navy-800: #1B3373;
+  --proesa-navy-700: #204590;   /* PRIMARY — wordmark, headings */
+  --proesa-navy-600: #274390;   /* theme accent3 */
+  --proesa-navy-500: #4B86C7;   /* theme accent2, mid blue */
+  --proesa-navy-400: #6FA3D8;
+  --proesa-navy-300: #8CC4EA;   /* theme accent1, light sky */
+  --proesa-navy-200: #BFDBF1;
+  --proesa-navy-100: #E3EEF8;
+  --proesa-navy-50:  #F2F7FC;
+
+  /* Secondary teal/green — accent on the logo's check + Vianto highlights */
+  --proesa-teal-900: #1D5E70;   /* theme accent4, deepest */
+  --proesa-teal-700: #2C8A7A;
+  --proesa-teal-600: #37A992;   /* PRIMARY ACCENT — used on logo */
+  --proesa-teal-500: #41B292;   /* theme accent6 */
+  --proesa-teal-400: #4AA095;
+  --proesa-teal-300: #7BC4B0;
+  --proesa-teal-200: #B8DDD0;
+  --proesa-teal-100: #E2F2EC;
+
+  /* Neutrals — clinical, paper-white, never warm */
+  --proesa-white: #FFFFFF;
+  --proesa-paper: #FBFCFD;       /* off-white surface */
+  --proesa-mist:  #F4F6FA;       /* sidebar, table stripe */
+  --proesa-fog:   #E7EAF1;       /* subtle borders */
+  --proesa-gray-200: #D5DAE3;
+  --proesa-gray-300: #B2B2B2;    /* theme accent5 — disabled */
+  --proesa-gray-500: #8189A0;
+  --proesa-gray-700: #4B5468;
+  --proesa-gray-900: #1F2533;
+  --proesa-ink:    #0F1626;       /* darkest text */
+
+  /* Semantic — built on the same palette */
+  --proesa-success: var(--proesa-teal-600);
+  --proesa-info:    var(--proesa-navy-500);
+  --proesa-warning: #E8A33A;     /* used sparingly; pulled to harmonize */
+  --proesa-danger:  #C9485F;     /* clinical red, not fire-engine */
+
+  /* ----------------------------------------------------------
+     SEMANTIC COLOR ROLES
+     ---------------------------------------------------------- */
+  --bg:           var(--proesa-white);
+  --bg-muted:     var(--proesa-paper);
+  --bg-subtle:    var(--proesa-mist);
+  --bg-inverse:   var(--proesa-navy-900);
+  --bg-brand:     var(--proesa-navy-700);
+
+  --fg:           var(--proesa-ink);
+  --fg-muted:     var(--proesa-gray-700);
+  --fg-subtle:    var(--proesa-gray-500);
+  --fg-disabled:  var(--proesa-gray-300);
+  --fg-inverse:   var(--proesa-white);
+  --fg-brand:     var(--proesa-navy-700);
+  --fg-accent:    var(--proesa-teal-600);
+  --fg-link:      var(--proesa-navy-700);
+
+  --border:       var(--proesa-fog);
+  --border-strong:var(--proesa-gray-200);
+  --border-brand: var(--proesa-navy-700);
+
+  /* ----------------------------------------------------------
+     BRAND GRADIENTS — derived from the logo
+     ---------------------------------------------------------- */
+  --gradient-mark:    linear-gradient(135deg, #8CC4EA 0%, #4B86C7 35%, #204590 100%);
+  --gradient-navy:    linear-gradient(180deg, #274390 0%, #14275A 100%);
+  --gradient-teal:    linear-gradient(180deg, #41B292 0%, #1D5E70 100%);
+  --gradient-hero:    linear-gradient(120deg, #14275A 0%, #204590 60%, #2C8A7A 100%);
+  --gradient-paper:   linear-gradient(180deg, #FFFFFF 0%, #F4F6FA 100%);
+
+  /* ----------------------------------------------------------
+     TYPOGRAPHY — base
+     ---------------------------------------------------------- */
+  --font-sans:    'Source Sans 3', 'Calibri', 'Segoe UI', system-ui, sans-serif;
+  --font-serif:   'Cormorant Garamond', 'Trajan Pro', 'Times New Roman', serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* Type scale — modular ratio ~1.20, anchored at 16px body */
+  --text-2xs:  11px;
+  --text-xs:   12px;
+  --text-sm:   14px;
+  --text-base: 16px;
+  --text-md:   18px;
+  --text-lg:   20px;
+  --text-xl:   24px;
+  --text-2xl:  30px;
+  --text-3xl:  38px;
+  --text-4xl:  48px;
+  --text-5xl:  64px;
+  --text-6xl:  80px;
+
+  --leading-tight:   1.15;
+  --leading-snug:    1.3;
+  --leading-normal:  1.5;
+  --leading-relaxed: 1.65;
+
+  --tracking-tight:   -0.02em;
+  --tracking-normal:  0;
+  --tracking-wide:    0.04em;
+  --tracking-caps:    0.12em;     /* PROESA wordmarks use generous tracking */
+
+  --weight-light:    300;
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+  --weight-black:    800;
+
+  /* ----------------------------------------------------------
+     SPACING (4-pt grid)
+     ---------------------------------------------------------- */
+  --space-0:  0;
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+
+  /* ----------------------------------------------------------
+     RADII
+     ---------------------------------------------------------- */
+  --radius-none: 0;
+  --radius-xs:   2px;
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-xl:   16px;
+  --radius-2xl:  24px;
+  --radius-pill: 999px;
+
+  /* ----------------------------------------------------------
+     ELEVATION — soft, paper-clinical, not glassy
+     ---------------------------------------------------------- */
+  --shadow-xs: 0 1px 2px rgba(20, 39, 90, 0.06);
+  --shadow-sm: 0 1px 3px rgba(20, 39, 90, 0.08), 0 1px 2px rgba(20, 39, 90, 0.04);
+  --shadow-md: 0 4px 12px rgba(20, 39, 90, 0.08), 0 2px 4px rgba(20, 39, 90, 0.04);
+  --shadow-lg: 0 12px 32px rgba(20, 39, 90, 0.10), 0 4px 8px rgba(20, 39, 90, 0.04);
+  --shadow-xl: 0 24px 48px rgba(20, 39, 90, 0.14);
+  --shadow-inset: inset 0 1px 2px rgba(20, 39, 90, 0.06);
+
+  /* ----------------------------------------------------------
+     MOTION
+     ---------------------------------------------------------- */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-emphasized: cubic-bezier(0.2, 0, 0, 1);
+  --ease-decel: cubic-bezier(0, 0, 0.2, 1);
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --duration-slow: 360ms;
+}
+
+/* ============================================================
+   SEMANTIC TYPE ROLES
+   ============================================================ */
+.proesa-display {
+  font-family: var(--font-sans);
+  font-size: var(--text-6xl);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg-brand);
+}
+
+.proesa-h1 {
+  font-family: var(--font-sans);
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg-brand);
+}
+
+.proesa-h2 {
+  font-family: var(--font-sans);
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-tight);
+  color: var(--fg);
+}
+
+.proesa-h3 {
+  font-family: var(--font-sans);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-snug);
+  color: var(--fg);
+}
+
+.proesa-h4 {
+  font-family: var(--font-sans);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-snug);
+  color: var(--fg);
+}
+
+.proesa-eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--fg-accent);
+}
+
+.proesa-lede {
+  font-family: var(--font-sans);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-relaxed);
+  color: var(--fg-muted);
+}
+
+.proesa-body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-normal);
+  color: var(--fg);
+}
+
+.proesa-caption {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-normal);
+  color: var(--fg-muted);
+}
+
+.proesa-stat {
+  font-family: var(--font-sans);
+  font-size: var(--text-6xl);
+  font-weight: var(--weight-light);
+  line-height: 1;
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg-brand);
+  font-variant-numeric: tabular-nums;
+}
+
+.proesa-quote {
+  font-family: var(--font-serif);
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-snug);
+  font-style: italic;
+  color: var(--fg);
+}
+
+/* Vianto sub-brand — elegant, traditional serif treatment */
+.vianto-display {
+  font-family: var(--font-serif);
+  font-size: var(--text-5xl);
+  font-weight: var(--weight-regular);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--proesa-ink);
+}
+.vianto-tag {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-regular);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  color: var(--proesa-ink);
+}
+
+/* Element resets so the semantic classes stack cleanly */
+.proesa-body, .proesa-h1, .proesa-h2, .proesa-h3, .proesa-h4,
+.proesa-display, .proesa-lede, .proesa-caption, .proesa-eyebrow {
+  margin: 0;
+}

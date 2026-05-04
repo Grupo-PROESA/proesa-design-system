@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8" />
+<title>Patrón UI · Mini-apps PROESA</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="pattern-styles.css" />
+</head>
+<body>
+
+<!-- ============ TABS DE NAVEGACIÓN DEL CATÁLOGO ============ -->
+<div class="app">
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="sb">
+    <div class="sb__brand">
+      <span class="sb__mark" aria-hidden="true">
+        <!-- Boxes icon (Lucide) — representa Inventarios -->
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.8a2 2 0 0 0 2.06 0L12 19l3.97 2.38a2 2 0 0 0 2.06 0l3-1.8a2 2 0 0 0 .97-1.71v-3.24a2 2 0 0 0-.97-1.71L18 11l3.03-1.92a2 2 0 0 0 .97-1.71V4.13a2 2 0 0 0-.97-1.71l-3-1.8a2 2 0 0 0-2.06 0L12 3 8.03.62a2 2 0 0 0-2.06 0l-3 1.8A2 2 0 0 0 2 4.13v3.24a2 2 0 0 0 .97 1.71L6 11Z"/><path d="M12 19V12"/><path d="m18 11-6 3.5-6-3.5"/><path d="M12 3v9"/></svg>
+      </span>
+      <div>
+        <p class="sb__title">Inventarios</p>
+        <p class="sb__sub">PROESA</p>
+      </div>
+    </div>
+
+    <nav class="sb__nav" aria-label="Navegación principal">
+      <p class="sb__sec-title">Operación</p>
+      <a href="#" class="sb__item sb__item--active">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9"/><rect x="14" y="3" width="7" height="5"/><rect x="14" y="12" width="7" height="9"/><rect x="3" y="16" width="7" height="5"/></svg>
+        Inicio
+      </a>
+      <a href="#" class="sb__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+        Existencias
+      </a>
+      <a href="#" class="sb__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><rect x="7" y="8" width="10" height="8"/></svg>
+        Movimientos
+      </a>
+      <a href="#" class="sb__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16h6"/><path d="M19 13v6"/><path d="M2 7h20"/><path d="M5 7v13a1 1 0 0 0 1 1h7"/><path d="M19 7v5"/><path d="M16 3h-8a1 1 0 0 0-1 1v3h10V4a1 1 0 0 0-1-1Z"/></svg>
+        Solicitar reposición
+      </a>
+
+      <div class="sb__divider"></div>
+      <p class="sb__sec-title">Análisis</p>
+      <a href="#" class="sb__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 14v3"/><path d="M12 7v10"/><path d="M16 11v6"/></svg>
+        Reportes
+      </a>
+      <a href="#" class="sb__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg>
+        Tendencias
+      </a>
+
+      <div class="sb__divider"></div>
+      <p class="sb__sec-title">Administración</p>
+      <a href="#" class="sb__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Usuarios
+      </a>
+      <a href="#" class="sb__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-9"/><path d="M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>
+        Configuración
+      </a>
+
+      <div class="sb__divider"></div>
+      <p class="sb__sec-title">Soporte</p>
+      <a href="#" class="sb__item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        Ayuda
+      </a>
+    </nav>
+
+    <div class="sb__foot">
+      <button class="sb__logout">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        Cerrar sesión
+      </button>
+      <p class="sb__user">Mariana Hernández</p>
+      <p class="sb__meta">PROESA · Inventarios</p>
+      <p class="sb__ver">v1.4.0</p>
+    </div>
+  </aside>
+
+  <!-- ============ PANE ============ -->
+  <div class="pane">
+
+    <!-- HEADER -->
+    <header class="hdr">
+      <div class="hdr__left">
+        <div class="hdr__crumb">
+          <a href="#" class="hdr__back">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+            <span>Portal PROESA</span>
+          </a>
+          <span class="hdr__crumb-sep" aria-hidden="true">/</span>
+          <span class="hdr__crumb-app">Inventarios</span>
+        </div>
+        <div class="hdr__title-row">
+          <h1 class="hdr__title" id="page-title">Inicio</h1>
+          <span class="hdr__sub" id="page-sub">Resumen del día</span>
+        </div>
+      </div>
+      <div class="hdr__right">
+        <button class="hdr__pill" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          5 reposiciones por aprobar
+        </button>
+        <span class="hdr__sync" title="Última sincronización con SAP">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><polyline points="21 3 21 8 16 8"/></svg>
+          Sync · hace 4 min
+        </span>
+      </div>
+    </header>
+
+    <!-- TABS catalog -->
+    <main class="main">
+      <div class="main__inner">
+
+        <!-- HERO header -->
+        <div class="catalog-head">
+          <h2>Patrón UI · Mini-apps del ecosistema PROESA</h2>
+          <p>Esta es una mini-app de ejemplo (Inventarios) construida sobre el patrón canónico extraído del repo de referencia. Toda mini-app del portal se construye con estos mismos componentes, mismas proporciones y mismo tono. Cambia el icono del brand mark, los KPIs y el dominio — el resto se queda quieto.</p>
+        </div>
+
+        <div class="showcase-tabs" role="tablist">
+          <button class="active" data-tab="page" type="button">Página de ejemplo</button>
+          <button data-tab="components" type="button">Componentes del sistema</button>
+          <button data-tab="login" type="button">Login & Modales</button>
+        </div>
+
+        <!-- ================= TAB 1: PÁGINA DE EJEMPLO ================= -->
+        <div data-panel="page">
+
+          <!-- Welcome card -->
+          <div class="card" style="margin-bottom:20px;">
+            <div class="card__body">
+              <div class="welcome">
+                <div>
+                  <p class="welcome__title">Hola, Mariana 👋</p>
+                  <p class="welcome__sub">Tu inventario en MX-CDMX está al día. Quedan 5 solicitudes por aprobar.</p>
+                  <div class="welcome__roles">
+                    <span class="badge badge--default">Coordinador</span>
+                    <span class="badge badge--neutral">Sucursal CDMX</span>
+                  </div>
+                </div>
+                <a href="#" class="welcome__help">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                  Centro de ayuda
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- KPIs -->
+          <section class="sec" style="margin-bottom:20px;">
+            <p class="eyebrow">Tu actividad</p>
+            <div class="kpi-grid">
+              <a href="#" class="kpi kpi--amber-strong">
+                <div class="kpi__top">
+                  <span class="kpi__label">Por aprobar</span>
+                  <span class="kpi__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  </span>
+                </div>
+                <p class="kpi__value">5</p>
+                <p class="kpi__hint">Solicitudes esperan tu visto bueno</p>
+              </a>
+              <a href="#" class="kpi kpi--amber">
+                <div class="kpi__top">
+                  <span class="kpi__label">Stock crítico</span>
+                  <span class="kpi__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                  </span>
+                </div>
+                <p class="kpi__value">12</p>
+                <p class="kpi__hint">SKUs por debajo del mínimo</p>
+              </a>
+              <a href="#" class="kpi kpi--green">
+                <div class="kpi__top">
+                  <span class="kpi__label">Movimientos hoy</span>
+                  <span class="kpi__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                  </span>
+                </div>
+                <p class="kpi__value">147</p>
+                <p class="kpi__hint">Entradas y salidas registradas</p>
+              </a>
+            </div>
+          </section>
+
+          <!-- Action tiles -->
+          <section class="sec" style="margin-bottom:20px;">
+            <p class="eyebrow">Acciones rápidas</p>
+            <div class="tiles">
+              <button class="tile" type="button">
+                <span class="tile__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2Z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+                </span>
+                <span class="tile__label">Registrar entrada</span>
+              </button>
+              <button class="tile" type="button">
+                <span class="tile__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2Z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+                </span>
+                <span class="tile__label">Registrar salida</span>
+              </button>
+              <button class="tile" type="button">
+                <span class="tile__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><rect x="7" y="8" width="10" height="8"/></svg>
+                </span>
+                <span class="tile__label">Hacer conteo</span>
+              </button>
+              <button class="tile" type="button">
+                <span class="tile__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2Z"/><polyline points="14 2 14 8 20 8"/><path d="M8 13h2"/><path d="M8 17h2"/><path d="M14 13h2"/><path d="M14 17h2"/></svg>
+                </span>
+                <span class="tile__label">Exportar a Excel</span>
+              </button>
+            </div>
+          </section>
+
+          <!-- Card con tabla y filtros -->
+          <div class="card">
+            <div class="card__header">
+              <div class="card__hgroup">
+                <div>
+                  <p class="card__title">Solicitudes recientes</p>
+                  <p class="card__subtitle">Últimas 8 reposiciones de tus jefes de área</p>
+                </div>
+                <a href="#" class="card__help" title="Ayuda" aria-label="Ayuda">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                </a>
+              </div>
+              <div class="card__actions">
+                <button class="btn btn--outline btn--sm" type="button">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                  Exportar
+                </button>
+                <button class="btn btn--primary btn--sm" type="button">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  Nueva solicitud
+                </button>
+              </div>
+            </div>
+            <div class="card__body">
+              <div class="filters" role="tablist">
+                <button class="filter filter--active" type="button">Todas <span style="opacity:.6">(28)</span></button>
+                <button class="filter" type="button">Pendientes <span style="opacity:.6">(5)</span></button>
+                <button class="filter" type="button">Aprobadas</button>
+                <button class="filter" type="button">Rechazadas</button>
+              </div>
+
+              <div class="table-wrap">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Folio</th>
+                      <th>SKU</th>
+                      <th>Producto</th>
+                      <th class="right">Cantidad</th>
+                      <th>Solicitante</th>
+                      <th>Estado</th>
+                      <th class="right">Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="num">SOL-04812</td>
+                      <td class="num">LAB-0921</td>
+                      <td>
+                        Reactivo Hemoglobina A1c<br/>
+                        <span class="table-note">Caja 100 pruebas</span>
+                      </td>
+                      <td class="num right">8</td>
+                      <td class="muted">Dr. Pérez</td>
+                      <td><span class="badge badge--warning">Pendiente</span></td>
+                      <td class="right">
+                        <span class="row-actions">
+                          <button class="btn btn--ghost btn--sm" type="button" aria-label="Aprobar">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                          </button>
+                          <button class="btn btn--ghost btn--sm" type="button" aria-label="Detalle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                          </button>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="num">SOL-04811</td>
+                      <td class="num">CONS-1144</td>
+                      <td>Jeringas 10 ml estériles<br/><span class="table-note">Caja 50 piezas</span></td>
+                      <td class="num right">24</td>
+                      <td class="muted">Enf. Ramírez</td>
+                      <td><span class="badge badge--success">Aprobada</span></td>
+                      <td class="right">
+                        <span class="row-actions">
+                          <button class="btn btn--ghost btn--sm" type="button" aria-label="Detalle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                          </button>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="num">SOL-04810</td>
+                      <td class="num">LAB-0633</td>
+                      <td>Tubos vacutainer EDTA</td>
+                      <td class="num right">200</td>
+                      <td class="muted">Lab. central</td>
+                      <td><span class="badge badge--warning">Pendiente</span></td>
+                      <td class="right">
+                        <span class="row-actions">
+                          <button class="btn btn--ghost btn--sm" type="button" aria-label="Aprobar">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                          </button>
+                          <button class="btn btn--ghost btn--sm" type="button" aria-label="Detalle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                          </button>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="num">SOL-04809</td>
+                      <td class="num">FARM-0207</td>
+                      <td>Paracetamol 500 mg<br/><span class="table-note">Frasco 100 tabs</span></td>
+                      <td class="num right">15</td>
+                      <td class="muted">Farmacia</td>
+                      <td><span class="badge badge--neutral">Rechazada</span></td>
+                      <td class="right">
+                        <span class="row-actions">
+                          <button class="btn btn--ghost btn--sm" type="button" aria-label="Detalle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                          </button>
+                        </span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="num">SOL-04808</td>
+                      <td class="num">LAB-0910</td>
+                      <td>Reactivo glucosa enzimática</td>
+                      <td class="num right">6</td>
+                      <td class="muted">Dr. Pérez</td>
+                      <td><span class="badge badge--success">Aprobada</span></td>
+                      <td class="right">
+                        <span class="row-actions">
+                          <button class="btn btn--ghost btn--sm" type="button" aria-label="Detalle">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                          </button>
+                        </span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Estado de sistema (solo admin, ejemplo) -->
+          <section class="sec" style="margin-top:20px;">
+            <p class="eyebrow">Estado del sistema</p>
+            <div class="card">
+              <div class="card__body" style="display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
+                <div style="display:flex;align-items:center;gap:12px;">
+                  <span class="kpi__icon" style="background:#f0fdf4;color:#15803d;width:36px;height:36px;border-radius:8px;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  </span>
+                  <div>
+                    <p style="font-size:14px;font-weight:600;">Sincronización con SAP</p>
+                    <p style="font-size:12px;color:#6b7280;">Último éxito · hace 4 minutos · 1,284 SKUs</p>
+                  </div>
+                </div>
+                <button class="btn btn--outline btn--sm" type="button">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><polyline points="21 3 21 8 16 8"/></svg>
+                  Sincronizar ahora
+                </button>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- ================= TAB 2: COMPONENTES ================= -->
+        <div data-panel="components" class="hidden">
+
+          <!-- Botones -->
+          <section class="block">
+            <h3 class="block__title">Botones</h3>
+            <p class="block__intro">5 variantes × 3 tamaños. Verbo claro, leftIcon Lucide, focus ring `blue-500`.</p>
+
+            <div class="card">
+              <div class="card__body" style="display:flex;flex-direction:column;gap:16px;">
+                <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+                  <button class="btn btn--primary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>Guardar</button>
+                  <button class="btn btn--secondary">Cancelar</button>
+                  <button class="btn btn--danger"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-2 14a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg>Eliminar</button>
+                  <button class="btn btn--outline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Exportar</button>
+                  <button class="btn btn--ghost"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Buscar</button>
+                </div>
+                <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+                  <button class="btn btn--primary btn--sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Nueva</button>
+                  <button class="btn btn--secondary btn--sm">Opción</button>
+                  <button class="btn btn--danger btn--sm">Quitar</button>
+                  <button class="btn btn--outline btn--sm">Filtros</button>
+                  <button class="btn btn--ghost btn--sm">Más</button>
+                </div>
+                <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+                  <button class="btn btn--primary" style="padding:10px 20px;font-size:16px;">Guardar cambios</button>
+                  <button class="btn btn--outline" style="padding:10px 20px;font-size:16px;">Cancelar</button>
+                </div>
+                <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+                  <button class="btn btn--primary" disabled style="opacity:.5;cursor:not-allowed;">Disabled</button>
+                  <button class="btn btn--primary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="animation: spin 1s linear infinite;"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
+                    Cargando…
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Badges -->
+          <section class="block">
+            <h3 class="block__title">Badges</h3>
+            <p class="block__intro">Pill `rounded-full`. Color + texto, nunca solo color.</p>
+            <div class="card">
+              <div class="card__body" style="display:flex;flex-wrap:wrap;gap:8px;">
+                <span class="badge badge--default">Coordinador</span>
+                <span class="badge badge--success">Aprobada</span>
+                <span class="badge badge--warning">Pendiente</span>
+                <span class="badge badge--info">En revisión</span>
+                <span class="badge badge--neutral">Inactivo</span>
+                <span class="badge" style="background:#fee2e2;color:#991b1b;">Error</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- KPIs -->
+          <section class="block">
+            <h3 class="block__title">KpiCard — todos los tonos</h3>
+            <p class="block__intro">Border + valor en el mismo tono. Eyebrow + icono en chip cuadrado. Si tiene `to`, todo el card navega.</p>
+            <div class="kpi-grid" style="grid-template-columns:repeat(3,1fr);gap:12px;">
+              <div class="kpi kpi--gray"><div class="kpi__top"><span class="kpi__label">Neutral</span><span class="kpi__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/></svg></span></div><p class="kpi__value">42</p><p class="kpi__hint">Datos generales</p></div>
+              <div class="kpi kpi--blue"><div class="kpi__top"><span class="kpi__label">Información</span><span class="kpi__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></span></div><p class="kpi__value">128</p><p class="kpi__hint">Acción opcional</p></div>
+              <div class="kpi kpi--blue-strong"><div class="kpi__top"><span class="kpi__label">Activos</span><span class="kpi__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></span></div><p class="kpi__value">3,420</p><p class="kpi__hint">Total en sistema</p></div>
+              <div class="kpi kpi--green"><div class="kpi__top"><span class="kpi__label">Completadas</span><span class="kpi__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span></div><p class="kpi__value">147</p><p class="kpi__hint">Todo en orden</p></div>
+              <div class="kpi kpi--amber"><div class="kpi__top"><span class="kpi__label">Atención</span><span class="kpi__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/></svg></span></div><p class="kpi__value">12</p><p class="kpi__hint">Por debajo del mínimo</p></div>
+              <div class="kpi kpi--amber-strong"><div class="kpi__top"><span class="kpi__label">Urgente</span><span class="kpi__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span></div><p class="kpi__value">5</p><p class="kpi__hint">Esperan tu decisión</p></div>
+            </div>
+          </section>
+
+          <!-- Filter pills -->
+          <section class="block">
+            <h3 class="block__title">Filtros pill</h3>
+            <p class="block__intro">Plano. Activo: `bg-blue-50 text-blue-700`.</p>
+            <div class="card">
+              <div class="card__body">
+                <div class="filters">
+                  <button class="filter filter--active" type="button">Todas <span style="opacity:.6">(28)</span></button>
+                  <button class="filter" type="button">Esta semana</button>
+                  <button class="filter" type="button">Este mes</button>
+                  <button class="filter" type="button">Pendientes</button>
+                  <button class="filter" type="button">Aprobadas</button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Inputs -->
+          <section class="block">
+            <h3 class="block__title">Inputs &amp; formularios</h3>
+            <p class="block__intro">HTML estándar con la clase canónica. Sin wrapper de `Input` — eso es intencional.</p>
+            <div class="card">
+              <div class="card__body" style="display:flex;flex-direction:column;gap:16px;max-width:560px;">
+                <div class="field-row">
+                  <div class="field">
+                    <label class="field__label" for="ej-folio">Folio</label>
+                    <input class="input" id="ej-folio" value="SOL-04812" />
+                    <p class="field__hint">Identificador único del movimiento</p>
+                  </div>
+                  <div class="field">
+                    <label class="field__label" for="ej-cant">Cantidad</label>
+                    <input class="input" id="ej-cant" type="number" value="8" />
+                  </div>
+                </div>
+                <div class="field">
+                  <label class="field__label" for="ej-tipo">Tipo de movimiento</label>
+                  <select class="select" id="ej-tipo">
+                    <option>Entrada — recepción de proveedor</option>
+                    <option>Entrada — devolución de área</option>
+                    <option>Salida — consumo</option>
+                    <option>Salida — merma</option>
+                    <option>Traspaso entre sucursales</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label class="field__label" for="ej-obs">Observaciones</label>
+                  <textarea class="textarea" id="ej-obs" rows="3" placeholder="Notas para auditoría"></textarea>
+                </div>
+                <div class="inline-error">
+                  <strong>Error al actualizar.</strong> La cantidad no puede ser negativa.
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Card y subcards -->
+          <section class="block">
+            <h3 class="block__title">Card &amp; CardHeader</h3>
+            <p class="block__intro">Título compacto, subtítulo, ícono de ayuda opcional, acciones a la derecha.</p>
+            <div class="card">
+              <div class="card__header">
+                <div class="card__hgroup">
+                  <div>
+                    <p class="card__title">Resumen del almacén</p>
+                    <p class="card__subtitle">Sucursal CDMX · 1,284 SKUs activos</p>
+                  </div>
+                  <a href="#" class="card__help" title="Ayuda" aria-label="Ayuda"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></a>
+                </div>
+                <div class="card__actions">
+                  <button class="btn btn--outline btn--sm" type="button">Filtrar</button>
+                  <button class="btn btn--primary btn--sm" type="button">Acción</button>
+                </div>
+              </div>
+              <div class="card__body" style="color:#6b7280;font-size:14px;">
+                <p>El cuerpo de la card lleva spacing `p-5` y respeta el ancho de la página. Si la card está vacía, mostramos un estado vacío honesto.</p>
+              </div>
+            </div>
+
+            <div style="height:12px;"></div>
+            <div class="card">
+              <div class="card__header">
+                <div class="card__hgroup">
+                  <div>
+                    <p class="card__title">Reportes</p>
+                    <p class="card__subtitle">Sin datos en el rango seleccionado</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card__body">
+                <div class="empty">No hay movimientos en este filtro.</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Tabla -->
+          <section class="block">
+            <h3 class="block__title">Tabla canónica</h3>
+            <p class="block__intro">Header `bg-gray-50` `text-[11px] uppercase`, filas `hover:bg-gray-50`, números `font-mono`.</p>
+            <div class="table-wrap">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>SKU</th>
+                    <th>Producto</th>
+                    <th class="right">Stock actual</th>
+                    <th class="right">Mínimo</th>
+                    <th>Estado</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td class="num">LAB-0921</td><td>Reactivo Hemoglobina A1c</td><td class="num right">18</td><td class="num right">10</td><td><span class="badge badge--success">OK</span></td></tr>
+                  <tr><td class="num">LAB-0633</td><td>Tubos vacutainer EDTA</td><td class="num right">42</td><td class="num right">100</td><td><span class="badge badge--warning">Bajo mínimo</span></td></tr>
+                  <tr><td class="num">CONS-1144</td><td>Jeringas 10 ml estériles</td><td class="num right">240</td><td class="num right">150</td><td><span class="badge badge--success">OK</span></td></tr>
+                  <tr><td class="num">FARM-0207</td><td>Paracetamol 500 mg</td><td class="num right">3</td><td class="num right">25</td><td><span class="badge" style="background:#fee2e2;color:#991b1b;">Crítico</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- Toasts -->
+          <section class="block">
+            <h3 class="block__title">Toasts</h3>
+            <p class="block__intro">Top-right, 4 tipos, auto-dismiss en ~4s. Texto = frase humana.</p>
+            <div style="display:flex;flex-direction:column;gap:8px;max-width:384px;">
+              <div class="toast toast--success">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                <span class="toast__msg">Movimiento registrado correctamente.</span>
+                <button class="toast__close" aria-label="Cerrar"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+              </div>
+              <div class="toast toast--error">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                <span class="toast__msg">Error al actualizar. Intenta de nuevo.</span>
+                <button class="toast__close" aria-label="Cerrar"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+              </div>
+              <div class="toast toast--info">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                <span class="toast__msg">Sincronización con SAP iniciada.</span>
+                <button class="toast__close" aria-label="Cerrar"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Action tiles -->
+          <section class="block">
+            <h3 class="block__title">ActionTile</h3>
+            <p class="block__intro">Atajo a una ruta principal del Dashboard.</p>
+            <div class="tiles">
+              <button class="tile" type="button"><span class="tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span><span class="tile__label">Crear nuevo</span></button>
+              <button class="tile" type="button"><span class="tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span><span class="tile__label">Aprobar pendientes</span></button>
+              <button class="tile" type="button"><span class="tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 14v3"/><path d="M12 7v10"/><path d="M16 11v6"/></svg></span><span class="tile__label">Ver reportes</span></button>
+              <button class="tile" type="button"><span class="tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2Z"/><polyline points="14 2 14 8 20 8"/></svg></span><span class="tile__label">Exportar Excel</span></button>
+            </div>
+          </section>
+        </div>
+
+        <!-- ================= TAB 3: LOGIN & MODALES ================= -->
+        <div data-panel="login" class="hidden">
+
+          <section class="block">
+            <h3 class="block__title">Página de Login</h3>
+            <p class="block__intro">Gradient `slate-900 → slate-950 → blue-950`, card blanca centrada `rounded-2xl shadow-xl`. El brand mark identifica la mini-app.</p>
+            <div class="login-stage">
+              <div class="login-card">
+                <div class="login-brand">
+                  <span class="login-brand__mark">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.8a2 2 0 0 0 2.06 0L12 19l3.97 2.38a2 2 0 0 0 2.06 0l3-1.8a2 2 0 0 0 .97-1.71v-3.24a2 2 0 0 0-.97-1.71L18 11l3.03-1.92a2 2 0 0 0 .97-1.71V4.13a2 2 0 0 0-.97-1.71l-3-1.8a2 2 0 0 0-2.06 0L12 3 8.03.62a2 2 0 0 0-2.06 0l-3 1.8A2 2 0 0 0 2 4.13v3.24a2 2 0 0 0 .97 1.71L6 11Z"/><path d="M12 19V12"/><path d="m18 11-6 3.5-6-3.5"/><path d="M12 3v9"/></svg>
+                  </span>
+                  <div>
+                    <p class="login-brand__title">Inventarios</p>
+                    <p class="login-brand__sub">PROESA</p>
+                  </div>
+                </div>
+                <form class="login-form" onsubmit="event.preventDefault();">
+                  <div class="field">
+                    <label class="field__label" for="lg-email">Correo institucional</label>
+                    <input class="input" id="lg-email" type="email" placeholder="usuario@grupoproesa.mx" />
+                  </div>
+                  <div class="field">
+                    <label class="field__label" for="lg-pwd">Contraseña</label>
+                    <input class="input" id="lg-pwd" type="password" placeholder="••••••••" />
+                  </div>
+                  <button class="btn btn--primary btn--lg" type="submit">Iniciar sesión</button>
+                </form>
+              </div>
+            </div>
+          </section>
+
+          <section class="block">
+            <h3 class="block__title">Modal estándar</h3>
+            <p class="block__intro">Backdrop `bg-black/40`, card `rounded-xl shadow-xl`, header + body + footer.</p>
+            <div class="modal-preview-stage">
+              <div class="modal-card">
+                <div class="modal-card__head">
+                  <p class="modal-card__title">Aprobar solicitud SOL-04812</p>
+                  <button class="modal-card__close" aria-label="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+                </div>
+                <div class="modal-card__body">
+                  <p style="font-size:14px;color:#374151;">Estás por aprobar 8 unidades de <strong>Reactivo Hemoglobina A1c</strong> solicitadas por Dr. Pérez. Esta acción genera una orden de salida en SAP.</p>
+                  <div class="field">
+                    <label class="field__label" for="md-com">Comentario (opcional)</label>
+                    <textarea class="textarea" id="md-com" rows="2"></textarea>
+                  </div>
+                </div>
+                <div class="modal-card__foot">
+                  <button class="btn btn--outline" type="button">Cancelar</button>
+                  <button class="btn btn--primary" type="button">Aprobar</button>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="block">
+            <h3 class="block__title">ConfirmModal · destructivo</h3>
+            <p class="block__intro">Botón principal `danger`. Verbo claro. Sin sorpresas.</p>
+            <div class="modal-preview-stage">
+              <div class="modal-card" style="max-width:448px;">
+                <div class="modal-card__head">
+                  <p class="modal-card__title">Eliminar movimiento</p>
+                  <button class="modal-card__close" aria-label="Cerrar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+                </div>
+                <div class="modal-card__body">
+                  <p style="font-size:14px;color:#374151;">¿Eliminar el movimiento <strong>MOV-22049</strong>? La acción no se puede deshacer.</p>
+                </div>
+                <div class="modal-card__foot">
+                  <button class="btn btn--outline" type="button">Cancelar</button>
+                  <button class="btn btn--danger" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-2 14a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L5 6"/></svg>Eliminar</button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+      </div>
+    </main>
+  </div>
+</div>
+
+<script>
+  // Tabs
+  const tabs = document.querySelectorAll('.showcase-tabs button');
+  const panels = document.querySelectorAll('[data-panel]');
+  const titles = {
+    page: ['Inicio', 'Resumen del día'],
+    components: ['Componentes', 'Sistema de UI'],
+    login: ['Acceso', 'Login y modales']
+  };
+  tabs.forEach(t => t.addEventListener('click', () => {
+    tabs.forEach(x => x.classList.remove('active'));
+    t.classList.add('active');
+    const tabName = t.dataset.tab;
+    panels.forEach(p => p.classList.toggle('hidden', p.dataset.panel !== tabName));
+    document.getElementById('page-title').textContent = titles[tabName][0];
+    document.getElementById('page-sub').textContent = titles[tabName][1];
+    document.querySelector('.main').scrollTop = 0;
+  }));
+</script>
+<style>@keyframes spin { to { transform: rotate(360deg); } }</style>
+</body>
+</html>
