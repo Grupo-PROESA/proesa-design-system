@@ -1,7 +1,7 @@
-# use_me — Cómo usar @proesa/design con Claude Code
+# use_me — Cómo usar @proesa/design
 
-Guía práctica para indicarle a **Claude Code** que construya o adapte una app
-del ecosistema PROESA usando nuestro sistema de diseño (`@proesa/design`).
+Guía práctica para construir o adaptar una aplicación web del ecosistema PROESA usando nuestro sistema de diseño (`@proesa/design`).
+Esta guía está pensada principalmente para un proceso de desarrollo vía **agentic coding**.
 
 ---
 
@@ -36,12 +36,11 @@ Hay dos caminos. Elige según tu caso:
 
 # A. Crear una app desde cero
 
-**Stack canónico:** Vite + React 18 + TypeScript strict + Tailwind v4 +
-lucide-react + react-router-dom v6+.
+**Stack canónico:** Vite + React 18 + TypeScript strict + Tailwind v4 + lucide-react + react-router-dom v6+.
 
 ### Paso 1 — El prompt de arranque
 
-Cópiale esto a Claude Code:
+Cópiale esto a Claude Code o el coding agent de tu preferencia:
 
 > Voy a crear una app del ecosistema PROESA. Usa el sistema de diseño
 > `@proesa/design` (`github:Grupo-PROESA/proesa-design-system`) como única fuente
@@ -102,8 +101,7 @@ caso, en realidad estás en el camino B.
 
 # B. Adaptar una app existente
 
-Para apps ya productivas donde **migrar el stack es trabajo de meses** (Antd,
-Refine, Tailwind v3, JSX puro, CSS modules…). Solo se adopta el look & feel.
+Para apps ya productivas donde **migrar el stack es trabajo de meses** (Antd, Refine, Tailwind v3, JSX puro, CSS modules…). Solo se adopta el look & feel.
 
 ### Paso 1 — El prompt de arranque
 
@@ -191,13 +189,11 @@ los tonos semánticos (verde/amber/red) **no se tocan**, y la app debe quedar
 
 ---
 
-## Plantilla de `CLAUDE.md` para la app consumidora
+## Plantilla de `CLAUDE.md` (o 'AGENTS.md') para la app consumidora
 
-Para que Claude Code recuerde estas reglas en cada sesión, deja un `CLAUDE.md`
-en la raíz de la app con algo como:
+Para que Claude Code recuerde estas reglas en cada sesión, deja un `CLAUDE.md` en la raíz de tu app con algo como:
 
 ```md
-# [Nombre App] · Notas para Claude Code
 
 ## Sistema de diseño — OBLIGATORIO
 Esta app pertenece al ecosistema PROESA y usa `@proesa/design` como única fuente
