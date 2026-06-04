@@ -7,6 +7,10 @@ Sistema de diseño del ecosistema PROESA. Tokens, componentes React y patrones p
 
 ## Cómo se usa
 
+> **¿Vas a usarlo con Claude Code?** Empieza por [use_me.md](./use_me.md) — guía
+> práctica y compartible para crear una app desde cero o adaptar una existente,
+> con los prompts de arranque listos para copiar.
+
 ### Apps nuevas (stack canónico Vite + React + TS + Tailwind v4)
 
 ```bash
@@ -46,6 +50,7 @@ Ahora la app puede usar `var(--proesa-navy-700)`, `var(--proesa-teal-600)`, etc.
 
 ## Documentación
 
+- [use_me.md](./use_me.md) — Guía práctica para usar el design system con Claude Code (crear app nueva o adaptar existente).
 - [docs/ui-pattern.md](./docs/ui-pattern.md) — Patrón UI canónico.
 - [docs/voice-and-tone.md](./docs/voice-and-tone.md) — Microcopy en español MX.
 - [docs/iconography.md](./docs/iconography.md) — Lucide curado y convenciones.
