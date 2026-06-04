@@ -60,7 +60,7 @@ Documentar el inventario en `.claude/docs/proesa-migration-inventory.md` antes d
 Instalar el paquete:
 
 ```bash
-npm i github:r-tapia22/proesa-design-system
+npm i github:Grupo-PROESA/proesa-design-system
 ```
 
 Importar **solo** los tokens en el CSS principal de la app:

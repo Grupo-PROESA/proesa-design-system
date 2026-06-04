@@ -74,7 +74,7 @@ mi-app/
     "typecheck": "tsc -b --noEmit"
   },
   "dependencies": {
-    "@proesa/design": "github:r-tapia22/proesa-design-system",
+    "@proesa/design": "github:Grupo-PROESA/proesa-design-system",
     "lucide-react": "^0.468.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -93,8 +93,8 @@ mi-app/
 ```
 
 **Notas:**
-- `@proesa/design` se instala vía git URL. Es un repo privado en `r-tapia22/`.
-- Para pinear a un tag: `"@proesa/design": "github:r-tapia22/proesa-design-system#v0.1.0"`.
+- `@proesa/design` se instala vía git URL. Es un repo público en `Grupo-PROESA/`.
+- Para pinear a un tag: `"@proesa/design": "github:Grupo-PROESA/proesa-design-system#v0.1.0"`.
 
 ---
 

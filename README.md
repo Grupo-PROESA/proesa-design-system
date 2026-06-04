@@ -10,7 +10,7 @@ Sistema de diseño del ecosistema PROESA. Tokens, componentes React y patrones p
 ### Apps nuevas (stack canónico Vite + React + TS + Tailwind v4)
 
 ```bash
-npm i github:r-tapia22/proesa-design-system
+npm i github:Grupo-PROESA/proesa-design-system
 ```
 
 ```css
@@ -62,7 +62,7 @@ Ahora la app puede usar `var(--proesa-navy-700)`, `var(--proesa-teal-600)`, etc.
 Apps consumidoras pueden pinear vía git tag:
 
 ```bash
-npm i github:r-tapia22/proesa-design-system#v0.1.0
+npm i github:Grupo-PROESA/proesa-design-system#v0.1.0
 ```
 
 ## Mantenimiento
