@@ -155,23 +155,37 @@ jobs:
 
 Mantener actualizada al agregar una app nueva. Coordinar con el equipo del Portal Gateway si la app va detrás de él.
 
+Backends (puertos `5xxx`) escuchan en `0.0.0.0` cuando viven detrás del nginx
+del gateway-lans (`.15`); en `127.0.0.1` cuando hay nginx local del `.77` como
+intermediario. Apartar el puerto incluso si la app aún no se ha deployado en
+el `.77` — la reserva vale desde el momento en que entra al `ecosystem.config.cjs`.
+
 | Puerto | Aplicación |
 |---|---|
 | 3001 | procesador-subrogados (backend) |
 | 4500 | control-consumos (backend) |
-| 4600 | control-coberturas (backend) — pendiente |
+| 4600 | control-coberturas (backend FastAPI, interno) |
 | 5100 | lans-api (backend FastAPI) |
 | 5200 | purchase-planning (backend FastAPI) |
+| 5300 | proesa-gateway / portal (backend uvicorn, interno 127.0.0.1; expuesto vía nginx :443/:9443) |
+| 5400 | gestion-costos (backend FastAPI, reservado en ecosystem aunque aún no deployado) |
+| 5500 | control-cxp (backend FastAPI, sirve también el SPA; bind 0.0.0.0; nginx en .15 → pagos.grupoproesa.mx) |
+| 5600 | gestion-logistica (backend FastAPI, sirve también el SPA; bind 0.0.0.0; nginx en .15 → logistica.grupoproesa.mx) |
 | 8000 | labcore-api (FastAPI) |
 | 8010 | procesador-subrogados (nginx) |
 | 8011 | control-consumos (nginx) |
 | 8020 | lans-api (nginx) |
 | 8030 | purchase-planning (nginx) |
 | 8040 | portal-informes (Node.js) |
-| 9443 | proesa-gateway / portal (nginx HTTPS) |
-| 9443 | control-coberturas vía portal HTTPS |
+| 9443 | nginx HTTPS del `.77` (legacy — control-coberturas + proesa-gateway aún lo exponen; nuevas apps usan `:443` directo del gateway-lans `.15`) |
 
-**REGLA:** al desplegar una app nueva, agregarla a esta tabla en el mismo PR.
+**REGLAS:**
+1. Al **desplegar** o **reservar** una app nueva, agregarla a esta tabla en el mismo PR.
+2. Antes de tomar un puerto, **validar** que no esté en uso buscando:
+   - Esta tabla del playbook.
+   - `ecosystem.config.cjs` y `.env*` de otros repos PROESA (`grep -rln "PORT\|--port" /path/to/PROESA/*/`).
+   - `ss -tlnp` en el `.77` para procesos vivos.
+3. Patrón canónico: saltos de 100 en cada banda (`3xxx` apps Node, `4xxx`/`5xxx` apps FastAPI, `8xxx` nginx locales legacy).
 
 ---
 
