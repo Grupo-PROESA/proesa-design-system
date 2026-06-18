@@ -1,6 +1,6 @@
 import { useMemo, useState, type ReactNode } from "react";
 import { NavLink } from "react-router-dom";
-import { ChevronLeft, ChevronRight, LogOut, type LucideIcon } from "lucide-react";
+import { ChevronLeft, ChevronRight, type LucideIcon } from "lucide-react";
 import { BrandMark } from "./BrandMark";
 import type { NavSection } from "./nav.types";
 import { useAuth } from "../auth/AuthContext";
@@ -22,7 +22,7 @@ export function Sidebar({
   defaultCollapsed = false,
   footerExtra,
 }: SidebarProps) {
-  const { user, hasRole, logout } = useAuth();
+  const { user, hasRole } = useAuth();
   const [collapsed, setCollapsed] = useState(defaultCollapsed);
 
   const visibleSections = useMemo(
@@ -107,19 +107,6 @@ export function Sidebar({
           </div>
         ))}
       </nav>
-
-      <div className="px-2 pb-2">
-        <button
-          onClick={logout}
-          title={collapsed ? "Cerrar sesión" : undefined}
-          className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-slate-500 hover:bg-white/[0.06] hover:text-slate-300 transition-colors ${
-            collapsed ? "justify-center" : ""
-          }`}
-        >
-          <LogOut size={18} />
-          {!collapsed && <span>Cerrar sesión</span>}
-        </button>
-      </div>
 
       {!collapsed && (
         <div className="px-4 py-3 border-t border-white/[0.06]">
