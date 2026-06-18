@@ -1,6 +1,6 @@
 {
   "name": "@proesa/design",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "description": "Sistema de diseño del ecosistema PROESA. Tokens, componentes React y patrones para mini-apps que viven detrás del Portal.",
   "type": "module",
   "private": true,

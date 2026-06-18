@@ -2,7 +2,26 @@
 
 Todos los cambios notables a este paquete se documentan aquí. Formato: [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/). Versionado: [SemVer](https://semver.org/lang/es/).
 
-## [Unreleased]
+## [0.2.1] — 2026-06-18
+
+### Eliminado
+
+- **Botón "Cerrar sesión" del `Sidebar`** (`src/components/layout/Sidebar.tsx`):
+  se elimina el botón de logout local. En el esquema SSO de PROESA el logout
+  local era inefectivo — borraba la cookie de la app pero dejaba viva la sesión
+  de Microsoft Entra (M365), así que al volver al portal el tile re-autenticaba
+  al instante (logout "de teatro"). El cierre de sesión real (RP-initiated
+  logout contra el `end_session_endpoint` de Entra) es responsabilidad del
+  portal (`proesa-gateway`). Las apps ahora solo exponen "Volver al Portal"
+  (`<PortalChip/>`).
+
+### Notas
+
+- `logout()` sigue disponible en `useAuth()` / `AuthProvider` sin cambios de API;
+  queda sin uso interno en el paquete y es candidato a deprecarse en una versión
+  futura (sería un cambio breaking → minor).
+
+## [0.2.0] — 2026-06-18
 
 ### Añadido
 
