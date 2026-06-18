@@ -537,7 +537,7 @@ Antes de marcar como listo:
 
 ## 17. Cómo evolucionar este patrón
 
-- Si una app necesita un componente nuevo de UI que probablemente otras también necesiten → **propónlo al paquete** vía PR a `r-tapia22/proesa-design-system`. No fork-ear.
+- Si una app necesita un componente nuevo de UI que probablemente otras también necesiten → **propónlo al paquete** vía PR a `Grupo-PROESA/proesa-design-system`. No fork-ear.
 - Si una app necesita un color o spacing fuera de tabla → es una pista de que el patrón está incompleto. Levantar issue.
 - No fork-ear el sidebar, header, o brand mark. Esos son la firma del ecosistema.
 - Cambios al patrón se discuten primero en `docs/adr/` antes de tocar componentes.

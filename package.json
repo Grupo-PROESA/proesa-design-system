@@ -7,7 +7,7 @@
   "license": "UNLICENSED",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/r-tapia22/proesa-design-system.git"
+    "url": "git+https://github.com/Grupo-PROESA/proesa-design-system.git"
   },
   "sideEffects": [
     "**/*.css"
