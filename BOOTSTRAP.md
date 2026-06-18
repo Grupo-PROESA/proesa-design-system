@@ -238,13 +238,27 @@ function AppRoutes() {
 export default function App() {
   return (
     <BrowserRouter>
-      <AuthProvider>
+      <AuthProvider
+        apiBase={import.meta.env.VITE_API_BASE ?? ""}
+        portalUrl={import.meta.env.VITE_PORTAL_URL ?? "https://portal.grupoproesa.mx"}
+        appCode="mi-app"
+      >
         <AppRoutes />
       </AuthProvider>
     </BrowserRouter>
   );
 }
 ```
+
+> **`appCode` es obligatorio para apps detrás del Portal.** El portal-gateway
+> expone el launch en `/apps/<internal_code>/launch`. Sin pasar `appCode`, el
+> redirect en 401 apunta a `${portalUrl}/launch` que no existe y deja el portal
+> en blanco. Usa exactamente el `internal_code` que registraste en
+> `proesa-gateway/config/apps.yml`.
+
+> **Logout canónico.** Por default el logout redirige a `${portalUrl}/auth/logout`
+> para cerrar la sesión del portal junto con la local. Si tu app necesita una
+> URL distinta, pasa `logoutUrl` explícito al `<AuthProvider>`.
 
 ---
 
