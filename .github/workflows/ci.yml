@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  libreria:
+    name: Librería (tipos y exports)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Tipos
+        run: npx tsc --noEmit -p tsconfig.json
+
+      # Las apps compilan el código fuente de la librería con su propio tsconfig
+      # (no aplica skipLibCheck a .ts), y la plantilla de Vite trae estas banderas.
+      - name: Tipos con las banderas de las apps consumidoras
+        run: npx tsc --noEmit -p tsconfig.json --noUnusedLocals --noUnusedParameters
+
+      - name: Los exports de package.json apuntan a archivos existentes
+        run: |
+          node -e '
+            const fs = require("fs");
+            const { exports } = JSON.parse(fs.readFileSync("package.json", "utf8"));
+            const faltan = Object.entries(exports).filter(([, ruta]) => !fs.existsSync(ruta));
+            for (const [clave, ruta] of faltan) console.error(`Falta ${ruta} (export "${clave}")`);
+            if (faltan.length) process.exit(1);
+            console.log(`${Object.keys(exports).length} exports verificados`);
+          '
